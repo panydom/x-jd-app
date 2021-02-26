@@ -1,0 +1,21 @@
+{
+  "name": "x-jd-scripts",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "./scripts/start.sh",
+    "stop": "./scripts/stop.sh",
+    "restart": "npm run stop && npm start",
+    "postinstall": "./scripts/postinstall.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=10.22.1"
+  },
+  "ci": {
+    "version": "10"
+  }
+}
