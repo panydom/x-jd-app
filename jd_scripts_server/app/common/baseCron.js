@@ -2,6 +2,7 @@
 
 const parser = require('cron-parser');
 
+const TimeoutOverflow = 2 ** 32 - 1;
 class BaseCron {
   constructor(filename, cron, ctx) {
     this.filename = filename;
@@ -13,9 +14,18 @@ class BaseCron {
   start() {
     const nextTick = this.getNextTick();
     if (nextTick) {
-      this.timer = setTimeout(() => this.task(), nextTick);
+      if (nextTick > TimeoutOverflow) {
+        this.checkNextTick(nextTick % TimeoutOverflow);
+      } else {
+        console.log(`开启定时任务${this.filename},${parseInt(nextTick / 1000)}秒后执行`);
+        this.timer = setTimeout(() => this.task(), nextTick);
+      }
     }
     return this;
+  }
+
+  checkNextTick(time) {
+    setTimeout(() => this.start(), time);
   }
 
   stop() {
