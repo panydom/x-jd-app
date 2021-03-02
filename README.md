@@ -14,6 +14,8 @@ yarn
 
 接下来需要安装[`LXK9301`](https://gitee.com/lxk0301/jd_docker)，由于一些原因需要使用作者提供的私钥来进行安装
 
+### 安装LXK9301(方法一)
+
 仓库内提供了该私钥，名为`jd_id_rsa`
 
 #### mac、linux平台
@@ -46,6 +48,10 @@ GIT_SSH_COMMAND='ssh -i ./jd_id_rsa' git clone --depth=1 git@gitee.com:lxk0301/j
 npm link ./jd_scripts
 cd jd_scripts && npm i 
 ```
+
+### 开启项目之后安装(方法三)
+
+在`脚本管理`页面右上角放置了一个可以更新的脚本的按钮，通过配置`.env.bak`文件`INSTALL_SCRIPTS_ON_START=true`可以实现启动的时候安装的scripts的功能。启动应用之后每2小时都会更新一次
 
 
 ### 运行

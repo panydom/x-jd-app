@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+cp .env.bak .env
+
 . ./scripts/egg.sh
 
 cd jd_scripts_server
