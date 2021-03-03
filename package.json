@@ -5,7 +5,8 @@
     "start": "./scripts/start.sh",
     "stop": "./scripts/stop.sh",
     "restart": "npm run stop && npm start",
-    "postinstall": "./scripts/postinstall.sh"
+    "postinstall": "./scripts/postinstall.sh",
+    "update": "./scripts/update.sh"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,11 @@
   },
   "ci": {
     "version": "10"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "config": {
+    "unsafe-perm": true
   }
 }
