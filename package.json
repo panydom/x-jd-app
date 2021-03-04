@@ -1,6 +1,6 @@
 {
   "name": "x-jd-app",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "scripts": {
     "start": "./scripts/start.sh",
     "stop": "./scripts/stop.sh",
